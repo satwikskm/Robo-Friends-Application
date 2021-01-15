@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import Cardlist from './Cardlist'
+import { robots } from './robots';
+import Searchbox from './Searchbox';
+import React,{ Component} from 'react';
 
-function App() {
+class App extends Component {
+  constructor(){
+    super();
+    this.state={
+      robots:robots,
+      searchfield:''
+    }
+  }
+  onSearchChange =(event)=>{
+    this.setState({searchfield:event.target.value})
+    console.log(event.target.value)
+    
+    
+  }
+  render(){
+    const filterrobots =this.state.robots.filter(robots =>{
+      return robots.name.toLocaleLowerCase().includes(this.state.searchfield.toLocaleLowerCase());
+    })
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <h1>Robo Friends</h1>
+      <Searchbox searchChange={this.onSearchChange}/>
+      <Cardlist robots={filterrobots} />
+      
     </div>
-  );
+  )};
 }
 
 export default App;
