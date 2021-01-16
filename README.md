@@ -2,6 +2,22 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Description:
+A simple React application with using create react app .
+Here various cards are designed which can be further used for a information website or a official portfolio.
+## Features:
+
+Basic Page
+![](images/Web capture_16-1-2021_102554_satwikskm.github.io.jpeg)
+
+### Search
+
+![](images/Screenshot 2021-01-16 103036.png)
+
+### Scroll
+
+![](images/Screenshot 2021-01-16 103144.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
